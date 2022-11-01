@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0089d3" />
+    <meta name="description" content="SecurePC is a web based utility for managing your PC from anywhere.">
+    <title>SecurePC: System Status</title>
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body style="user-select: none;">
+    <div class="header"> SecurePC </div>
+    <form action="setstatus" method="post">
+        <div class="settings">
+            <div class="systemsetting">
+                <p class="title">Keyboard Lock</p>
+                <div class="inpgroup">
+                    <input class="radio" type="radio" name="Keyboard" value="KeyboardEnabled" id="KeyboardEnabled" {{keyboardEnabled }}>
+                    <label for="KeyboardEnabled">Enabled</label>
+                </div>
+                <div class="inpgroup">
+                    <input class="radio" type="radio" name="Keyboard" value="KeyboardDisabled" id="KeyboardDisabled" {{keyboardDisabled }}>
+                        <label for="KeyboardDisabled">Disabled</label>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="systemsetting">
+                    <p class="title">Mouse Lock</p>
+                <div class="inpgroup">
+                    <input class="radio" type="radio" name="Mouse" value="MouseEnabled" id="MouseEnabled" {{mouseEnabled}}>
+                        <label for="MouseEnabled">Enabled</label>
+                    </div>
+                    <div class="inpgroup">
+                        <input class="radio" type="radio" name="Mouse" value="MouseDisabled" id="MouseDisabled" {{mouseDisabled}}>
+                        <label for="MouseDisabled">Disabled</label>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="systemsetting">
+                    <p class="title">System Awake</p>
+                    <div class="inpgroup">
+                        <input class="radio" type="radio" name="Awake" value="AwakeEnabled" id="AwakeEnabled" {{AwakeEnabled}}>
+                        <label for="AwakeEnabled">Enabled</label>
+                    </div>
+                    <div class="inpgroup">
+                        <input class="radio" type="radio" name="Awake" value="AwakeDisabled" id="AwakeDisabled" {{AwakeDisabled}}>
+                        <label for="AwakeDisabled">Disabled</label>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="systemsetting">
+                <p class="title">Power</p>
+                <div class="inpgroup">
+                    <button class="power-btn" onclick="if(confirm('Do you want to Sleep system') == true){location.replace('systemcommand/Sleep')}" type="button">Sleep</button>
+                    <button class="power-btn" onclick="if(confirm('Do you want to Hibernate system') == true){location.replace('systemcommand/Hibernate')}" type="button">Hibernate</button>
+                    <button class="power-btn" onclick="if(confirm('Do you want to Shutdown system') == true){location.replace('systemcommand/Shutdown')}" type="button">Shut down</button>
+                    <button class="power-btn" onclick="if(confirm('Do you want to Restart system') == true){location.replace('systemcommand/Restart')}" type="button">Restart</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="btncontainer">
+                <button type="submit" class="btn">Save</button>
+                <button type="button" onclick="location.reload();" class="btn">Cancel</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
